@@ -19,8 +19,4 @@ export class CreatePizzaDto {
   @IsNumber()
   @IsNotEmpty()
   readonly price: number;
-
-  @IsArray()
-  @IsString({ each: true })
-  readonly toppings: string[];
 }

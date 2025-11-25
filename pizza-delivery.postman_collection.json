@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "a9a8b8c0-d5e6-4f7f-8a1a-9b8c0d7e6f5a",
+		"name": "Pizza Delivery API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health",
+			"item": [
+				{
+					"name": "Get Health Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/health",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"health"
+						]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pizzas",
+			"item": [
+				{
+					"name": "Get All Pizzas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pizzas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pizzas"
+						]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Pizza by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pizzas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pizzas",
+								"1"
+						]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Pizza",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Pepperoni\",\n  \"size\": \"large\",\n  \"price\": 15.99\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pizzas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pizzas"
+						]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Pizza",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Pepperoni Deluxe\",\n  \"price\": 16.99\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/pizzas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pizzas",
+								"1"
+						]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Pizza",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/pizzas/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"pizzas",
+								"1"
+						]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+						]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"1"
+						]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"customerName\": \"John Doe\",\n  \"address\": \"123 Main St\",\n  \"phone\": \"555-555-5555\",\n  \"pizzas\": [\n    \"60f7e1b3b3e3e3e3e3e3e3e3\",\n    \"60f7e1b3b3e3e3e3e3e3e3e4\"\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+						]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"in_progress\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/orders/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"1"
+						]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/orders/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"1"
+						]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:3000"
+		}
+	]
+}

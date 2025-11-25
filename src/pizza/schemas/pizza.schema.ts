@@ -18,10 +18,7 @@ export class Pizza {
   size: PizzaSize;
 
   @Prop({ required: true })
-  price: number;
-
-  @Prop([String])
-  toppings: string[];
+  price: number;ǚ
 }
 
 export const PizzaSchema = SchemaFactory.createForClass(Pizza);

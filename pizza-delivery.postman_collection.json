@@ -6,13 +6,76 @@
 	},
 	"item": [
 		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/user",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"password\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Health",
 			"item": [
 				{
 					"name": "Get Health Status",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
 						"url": {
 							"raw": "{{baseUrl}}/health",
 							"host": [
@@ -20,7 +83,7 @@
 							],
 							"path": [
 								"health"
-						]
+							]
 						}
 					},
 					"response": []
@@ -34,7 +97,12 @@
 					"name": "Get All Pizzas",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
 						"url": {
 							"raw": "{{baseUrl}}/pizzas",
 							"host": [
@@ -42,7 +110,7 @@
 							],
 							"path": [
 								"pizzas"
-						]
+							]
 						}
 					},
 					"response": []
@@ -51,7 +119,12 @@
 					"name": "Get Pizza by ID",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
 						"url": {
 							"raw": "{{baseUrl}}/pizzas/1",
 							"host": [
@@ -60,7 +133,7 @@
 							"path": [
 								"pizzas",
 								"1"
-						]
+							]
 						}
 					},
 					"response": []
@@ -73,6 +146,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
 							}
 						],
 						"body": {
@@ -86,7 +163,7 @@
 							],
 							"path": [
 								"pizzas"
-						]
+							]
 						}
 					},
 					"response": []
@@ -99,6 +176,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
 							}
 						],
 						"body": {
@@ -113,7 +194,7 @@
 							"path": [
 								"pizzas",
 								"1"
-						]
+							]
 						}
 					},
 					"response": []
@@ -122,7 +203,12 @@
 					"name": "Delete Pizza",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
 						"url": {
 							"raw": "{{baseUrl}}/pizzas/1",
 							"host": [
@@ -131,7 +217,7 @@
 							"path": [
 								"pizzas",
 								"1"
-						]
+							]
 						}
 					},
 					"response": []
@@ -145,7 +231,12 @@
 					"name": "Get All Orders",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
 						"url": {
 							"raw": "{{baseUrl}}/orders",
 							"host": [
@@ -153,7 +244,7 @@
 							],
 							"path": [
 								"orders"
-						]
+							]
 						}
 					},
 					"response": []
@@ -162,7 +253,12 @@
 					"name": "Get Order by ID",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
 						"url": {
 							"raw": "{{baseUrl}}/orders/1",
 							"host": [
@@ -171,7 +267,7 @@
 							"path": [
 								"orders",
 								"1"
-						]
+							]
 						}
 					},
 					"response": []
@@ -184,6 +280,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
 							}
 						],
 						"body": {
@@ -197,7 +297,7 @@
 							],
 							"path": [
 								"orders"
-						]
+							]
 						}
 					},
 					"response": []
@@ -210,6 +310,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
 							}
 						],
 						"body": {
@@ -224,7 +328,7 @@
 							"path": [
 								"orders",
 								"1"
-						]
+							]
 						}
 					},
 					"response": []
@@ -233,7 +337,12 @@
 					"name": "Delete Order",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}"
+							}
+						],
 						"url": {
 							"raw": "{{baseUrl}}/orders/1",
 							"host": [
@@ -242,7 +351,7 @@
 							"path": [
 								"orders",
 								"1"
-						]
+							]
 						}
 					},
 					"response": []
@@ -254,6 +363,10 @@
 		{
 			"key": "baseUrl",
 			"value": "http://localhost:3000"
+		},
+		{
+			"key": "token",
+			"value": ""
 		}
 	]
 }
